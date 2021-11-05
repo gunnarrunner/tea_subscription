@@ -5,6 +5,8 @@ application up and running.
 
 Things you may want to cover:
 
+![](images/tea_schema.png)
+
 * Ruby version
 
 * System dependencies
