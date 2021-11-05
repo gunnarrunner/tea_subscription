@@ -5,5 +5,6 @@ FactoryBot.define do
     status { ['unsubscribed', 'subscribed', 'canceled'].sample }
     frequency { Faker::Time.backward(days: 5, period: :morning, format: :short) }
     customer
+    tea
   end
 end

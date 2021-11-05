@@ -5,7 +5,6 @@ class CreateTeas < ActiveRecord::Migration[5.2]
       t.string :description
       t.string :temperature
       t.string :brew_time
-      t.references :subscription, foreign_key: true
 
       t.timestamps
     end
