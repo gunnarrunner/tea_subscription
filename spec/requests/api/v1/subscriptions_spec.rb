@@ -38,7 +38,7 @@ RSpec.describe "Subscriptions API", type: :request do
       @subscription = create(:subscription, status:0, customer: @customer, tea: @tea)
 
       update_subscribe = {
-                    status: 1
+                    status: 2
                   }
       
       headers = { 'CONTENT_TYPE' => 'application/json', "Accept": 'application/json' }
@@ -48,11 +48,11 @@ RSpec.describe "Subscriptions API", type: :request do
       expect(response.status).to eq(200)
       
       confirmation = JSON.parse(response.body, symbolize_names: true)
-      
+
       expect(confirmation.class).to eq(Hash)
       expect(confirmation[:data].class).to eq(Hash)
       expect(confirmation[:data]).to have_key(:id)
-      expect(confirmation[:data][:details][:status]).to eq('subscribed')
+      expect(confirmation[:data][:details][:status]).to eq('canceled')
     end
   end
 end
